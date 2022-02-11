@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+    <script src="./string.js"></script>
+
+    <script>
+        window.onload = function(){
+            var string = document.getElementById('string'); 
+            string.innerText = mainstring;  
+           
+        var btnChangeCase = document.getElementById("btnChangeCase");
+        btnChangeCase.addEventListener('click', function(){
+        var c = document.getElementById("txtcase").value;
+        var changestr = changeCase(c);
+        document.getElementById("spancase").innerHTML = changestr;
+
+        },false)
+
+        var btnCharCount = document.getElementById("btnCharCount");
+        btnCharCount.addEventListener('click', function(){
+        var c = document.getElementById("txtchar").value;
+        var charCount = getCharCount(c);
+        document.getElementById("divchar").innerHTML = charCount;
+
+        },false)
+
+        var btnIndexPrint = document.getElementById("btnIndexPrint");
+        btnIndexPrint.addEventListener('click', function(){
+        var c = document.getElementById("txtindex").value;
+        var charIndex = getIndexofChar(c);
+        document.getElementById("divindex").innerHTML = charIndex;
+
+        },false)
+
+        var btnVowelsprint = document.getElementById("btnVowelsprint");
+        btnVowelsprint.addEventListener('click', function(){
+        var no_of_vowels = vowels();
+        document.getElementById("divvowel").innerHTML = no_of_vowels;
+
+        },false)
+
+        var btnStatements = document.getElementById("btnStatements");
+        btnStatements.addEventListener('click', function(){
+        var no_of_statements = getNoOfStatements();
+        document.getElementById("divstatement").innerHTML = no_of_statements;
+
+        },false)
+        }
+    </script>
+</head>
+<body>
+    <div id="string"></div>
+    <hr>
+    <br>
+    Enter 'L' to convert in lower case and 'U' to upper case String.
+    <input type="text" id="txtcase">
+    <input type="button" value="Change Case" id="btnChangeCase"/>
+    <br>
+    <span id="spancase"></span>
+    <br><br>
+
+    Enter a character to print count from String.
+    <input type="text" id="txtchar">
+    <input type="button" value="Print Character Count" id="btnCharCount"/>
+    <br>
+    <div id="divchar"></div>
+    <br><br>
+    
+    Enter a character to print positions in String.
+    <input type="text" id="txtindex">
+    <input type="button" value="Print Positions" id="btnIndexPrint"/>
+    <br>
+    <div id="divindex"></div>
+    <br><br>
+    
+    To print number of vowels in String.
+    <input type="button" value="Click here" id="btnVowelsprint"/>
+    <br>
+    <div id="divvowel"></div>
+    <br><br>
+    
+    To print number of statements in String.
+    <input type="button" value="Click here" id="btnStatements"/>
+    <br>
+    <div id="divstatement"></div>
+
+
+
+
+
+</body>
+</html>

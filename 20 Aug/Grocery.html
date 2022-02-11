@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store</title>
+    <style>
+        table td {
+        border: 1px solid #cccccc;
+        }
+
+        td {
+        height: 80px;
+        width: 160px;
+        text-align: center;
+        vertical-align: middle;
+        }
+    </style>
+    <script src="Grocery.js"></script>
+    <script>
+        var header = ['ProductRowId','ProductId','ProductName','CategoryName','Manufacturer','Price','Description'];
+        createDb();
+        getAllEntries();
+        totalEnteries();
+        // console.log(res);
+        window.onload = function()
+        {
+            getAllEntries();
+            console.log(dbEntries);
+            document.getElementById('submit').addEventListener(
+                'click',function()
+                {
+                    totalEnteries();
+                    storeData();
+                },
+                false)
+            document.getElementById('getTable').addEventListener('click',function()
+            {
+                getAllEntries();
+                document.getElementById('dataBase').innerHTML = generateHeading() + generateBody();
+            },false)
+            document.getElementById('deleteTable').addEventListener('click',function(){
+                deleteDb();
+            },false)
+            document.getElementById('btnclear').addEventListener('click',function(){
+                clear();
+            },false)
+            document.getElementById('Manufacturer').innerHTML = dropDownFunc(['Tata','IBM','MacD','Bajaj','Google','Microsoft','Amazon']);
+            document.getElementById('CategoryName').innerHTML = dropDownFunc(['Electrical','Electronics','Food','Fashion','Software','Hardware']);
+
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <div id="body">
+            <h1 style="color: brown;">Grocery Store</h1>
+            <h4>Name: 
+                <input type="text"  class="c" id = "ProductName" style="text-transform: capitalize;" ><br>
+
+            </h4>
+
+            Select Category:  
+            <select id="CategoryName"></select><br><br>
+            Select Manufacturer:  
+            <select id="Manufacturer"></select><br>
+
+            <h4>
+                Price :  
+            <input type="number" min = '0' pattern="[0-9]" id="Price" class="c"><br>
+            </h4>
+            
+            <h4>
+                Description : 
+            <input type="text" class="c" id="Description" style="text-transform: capitalize;">
+
+            </h4>
+            
+            <button id="submit">Submit</button>
+            <input type="button" value="Clear" id="btnclear">
+            <button id="getTable">Get Data</button>
+            <button id="deleteTable">Delete DataBase</button>
+            
+        </div>
+        <br>
+        <hr>
+        <table id="dataBase" style="width: 100%;" ></table>
+    </center>
+    
+</body>
+</html>

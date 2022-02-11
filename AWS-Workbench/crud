@@ -1,0 +1,7 @@
+{
+    "DeptNo": 10,
+    "DeptName": "Okay",
+    "Location" :"Indore"
+}
+
+sequelize-auto -h database-nayan.cc5lfrm4xtqz.ap-southeast-1.rds.amazonaws.com -d Company -u admin -x pass1234 --dialect mysql -t Department

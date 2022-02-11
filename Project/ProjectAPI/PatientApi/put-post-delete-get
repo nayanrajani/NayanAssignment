@@ -1,0 +1,17 @@
+{
+      "Patient_Name": "Simran Waghela",
+      "Patient_Email": "simran@gmail.com",
+      "Patient_Age": 44,
+      "Patient_Gender": "Female",
+      "Patient_Address": "Nanda nagar Colony",
+      "Patient_Phoneno": "6789012345",
+      "Patient_Addhaar": "0987334520945712",
+      "Patient_Disease": "Viral",
+      "Patient_Ward_type": "General",
+      "Patient_Room_no": "25"
+}
+
+
+//Sequelize
+
+sequelize-auto -h localhost -d hospital -u root -x Nayan@98digisol --dialect mysql -t doctordetails patientdetails warddetails role user userinrole roomdetails wardboy medicinedetails canteendetails billdetails nurse dischargedetails staffdetails

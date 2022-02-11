@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button</title>
+    <script>
+        window.onload = function(){
+            var product = [
+            {ProductId : 31, ProductName:"Egg", CategoryName:"Food", Price:50},
+                {ProductId : 32, ProductName:"Noodles", CategoryName:"Food", Price:250},
+                {ProductId : 33, ProductName:"Roti", CategoryName:"Food", Price:50},
+                {ProductId : 34, ProductName:"Vegetables", CategoryName:"Food", Price:30},
+                {ProductId : 35, ProductName:"Pulses", CategoryName:"Food", Price:800},
+                
+                {ProductId : 01, ProductName:"AC", CategoryName:"Electronics", Price:70000},
+                {ProductId : 03, ProductName:"Tablet", CategoryName:"Electronics", Price:20000},
+                {ProductId : 05, ProductName:"Camera", CategoryName:"Electronics", Price:80000},
+                {ProductId : 06, ProductName:"Mobile", CategoryName:"Electronics", Price:80000},
+                {ProductId : 08, ProductName:"Fridge", CategoryName:"Electronics", Price:80000},
+                {ProductId : 09, ProductName:"Washing machine", CategoryName:"Electronics", Price:80000},
+                {ProductId : 10, ProductName:"Laptop", CategoryName:"Electronics", Price:80000},
+
+                {ProductId : 11, ProductName:"LED", CategoryName:"Electrical", Price:300},
+                {ProductId : 12, ProductName:"Socket", CategoryName:"Electrical", Price:500},
+                {ProductId : 13, ProductName:"Buttons", CategoryName:"Electrical", Price:300},
+                {ProductId : 14, ProductName:"Light", CategoryName:"Electrical", Price:300},
+                {ProductId : 15, ProductName:"Switches", CategoryName:"Electrical", Price:300},
+
+                {ProductId : 21, ProductName:"TIE", CategoryName:"Fashion", Price:1000},
+                {ProductId : 22, ProductName:"Shirt", CategoryName:"Fashion", Price:10000},
+                {ProductId : 23, ProductName:"Watch", CategoryName:"Fashion", Price:10000},
+                {ProductId : 24, ProductName:"Belt", CategoryName:"Fashion", Price:1500},
+                {ProductId : 25, ProductName:"Trouser", CategoryName:"Fashion", Price:3000},
+                {ProductId : 26, ProductName:"Hat", CategoryName:"Fashion", Price:2500},
+
+                
+                
+        ];
+
+
+        var cName=[];
+            for(var i=0;i<product.length;i++){
+                if(cName.includes(product[i].CategoryName))
+                    continue;
+                else
+                    cName.push(product[i].CategoryName);
+            }
+
+        generateRadio(cName);
+        function generateRadio(cName){
+            var opt="";
+            cName.push("All");
+            for(var i=0;i<cName.length;i++){
+                opt+='<input type="radio" name="ch" value="'+ i + '" >' + cName[i] + '</input> <br>';
+            }
+            document.getElementById('radioList').innerHTML = opt;
+           }
+
+           var radios = document.getElementsByName('ch');
+           if(radios.length > 0) {
+               for(var idx=0;idx<radios.length;idx++){
+                   radios[idx].addEventListener('click',function(){
+
+            var d="Table have " + cName[this.value]+ " category items";
+            document.getElementById("heading").innerHTML = d;
+            var tableRow='';
+            if(cName[this.value]=="All"){
+                for(var j=0;j<product.length;j++){
+                var tr = '<tr>'
+                for(var h=0;h<headers.length;h++){
+                    tr+='<td>'+ product[j][headers[h]] + '</td>';
+                }
+                tableRow+=tr;
+            }
+            }
+            else{
+            for(var j=0;j<product.length;j++){
+                if(cName[this.value] == product[j].CategoryName){
+                var tr = '<tr>'
+                for(var h=0;h<headers.length;h++){
+                    tr+='<td>'+ product[j][headers[h]] + '</td>';
+                }
+                tableRow+=tr;
+            }
+            }}
+            
+            document.getElementById('tbody').innerHTML = tableRow;
+                   },false);
+               }  
+           }
+
+        var headers = [];
+            for(var p in product[0]){
+                headers.push(p);
+            }
+            var d="Below table contain only all category items";
+            document.getElementById("heading").innerHTML = d;
+            var headerRow = '';
+            for(var i=0;i<headers.length;i++){
+                headerRow+="<th>"+headers[i]+"&nbsp&nbsp</th>";
+            };
+            document.getElementById("thead").innerHTML = headerRow;
+
+         
+            var tableRow='';
+            for(var j=0;j<product.length;j++){
+                var tr = '<tr>'
+                for(var h=0;h<headers.length;h++){
+                    tr+='<td>'+ product[j][headers[h]] + '</td>';
+                }
+                tableRow+=tr;
+            }
+            
+            document.getElementById('tbody').innerHTML = tableRow;
+
+            
+           
+        };
+    </script>
+</head>
+<body>
+    <br>
+    <center>
+        <h2 style="color: crimson;">Select your fav.</h2>
+    <div id="radioList"></div>
+    <hr>
+    <h4 id="heading"></h4>
+    <table>
+        <thead id="thead"> 
+            
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    </center>
+    
+</body>
+</html>

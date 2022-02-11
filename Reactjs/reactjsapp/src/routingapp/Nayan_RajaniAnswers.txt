@@ -1,0 +1,83 @@
+JS Exam
+1. Which of the following if the new iteration introduced in the ES 6? 
+Answer:(b) For..of
+
+2. Which of the following statement correctly defines the Transpiler? 
+Answer: (b) This is an engine for the JavaScript Code generator to execute the code in browser 
+
+3. Which of the following array method is used to modify array elements based on login and return them? 
+Answer: (a) map() 
+
+4.How to return elements from an array based on condition in an output array? 
+Answer: (d) Use filter() method that reads each element from array and if the condition match then return element in an output array 
+
+5. Which of the following is a syntax of the template string? 
+Answer: (b) `The Name is ${name}`; 
+
+6. What is the difference between the let and var declarations? 
+Answer: (c) The var is function scope declaration but let is the bock scope declarations 
+
+7. How to define public members in the reference functions? 
+Answer: (a) Use this prefix for the public declaration for ref functions. 
+
+8. How to implement an object immutation in ES 6? 
+Answer: (d) Use spread operator
+
+9. How to define public data members of the class in ES 6? 
+Answer: (b) Use this keyword to define public members inside the constructor 
+
+10. What is arguments array in ES 6? 
+Answer: (b) This is an array passed as parameter to function if the function accepts variable number of parameters  
+
+11. Why should we use the Promise object in JavaScript? 
+Answer: (b) This object makes it sure that the JavaScript can perform DOM operations successfully when there is Long running operations like AJAX 
+
+12. Which of the following explains the Proxy object?
+Answer: (d) The proxy object is used to provide an indirect access to the actual object and its method by defining the methods to hide actual methods and properties 
+
+
+React Js Exam 
+1.  Which of the following defines the JSX? 
+Answer: (b)
+
+2. Which of the following transpiler is used by React Application for ES 6?
+Answer: (b) None of the Above 
+
+3. What is state in React Component? 
+Answer: (d)  
+
+4. Which object is used to access data from parent react component to child component? 
+Answer: (a) Use the prop object in child component to access data form parent 
+
+5. What is the use of the bind() method in React Application? 
+Answer: (b) This method is used to bind the state objects and methods at component level. 
+
+6. What is the use of forceUpdate() method?
+Answer: (b) This is used to update state objects forcefully 
+
+7. Which of the following component lifecycle method is recommended by Ajax requests when the Component is executed? 
+Answer: (d) componentDidMount 
+
+8. What is the use of setState() method? 
+Answer: (a) This is used to update state object by assigning the new value to state object. 
+
+9. Which of the following is not the Hook? 
+Answer: (a) useData() 
+
+10. Which of the following Hook is used when the component is unloaded? 
+Answer: (b) useEffect() 
+
+11. What is the use of useSelector() hook? 
+Answer: (c) It is used to select data from redux store 
+
+12. What is the replacement of connect() method of react-redux in the hooks implementation of react-redux? 
+Answer: (b) useDispatch() 
+
+13. How to event occurred on Component triggers action on the store? 
+Answer: mapStateToProps()
+
+14.  What is ‘key’ property in case of runtime generation of the DOM element? 
+Answer:(b) 
+
+15. What is the use of Dependency Array parameter for useEffect() hook? 
+Answer: (d)

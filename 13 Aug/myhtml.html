@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    
+
+    window.onload = function(){
+        var courses=[ {CourseId:101,CourseName:'C++', Fees: 1000},
+        {CourseId:102, CourseName: 'java', Fees: 3000}, 
+        {CourseId:103, CourseName: 'C#', Fees: 4000},
+        {CourseId:104, CourseName: 'Node JS', Fees: 3500},
+        {CourseId:105, CourseName: 'React', Fees: 5000},
+        {CourseId:106, CourseName: 'Angular', Fees: 4500},
+        {CourseId:107, CourseName: '.NET', Fees: 2500},
+        ];
+
+        clistdisplay(courses);
+        
+        function readheaders(c){
+            var headers=[];
+            for(var p in courses[0]){
+                headers.push(p);
+            }
+            return headers;
+        }
+
+
+        function clistdisplay(c){
+            var headers = readheaders(c);
+            var opt="";
+            for(var i=0;i<courses.length;i++){
+                opt+='<input type="checkbox" name="r" value="'+ courses[i][headers[0]] + '" >' + courses[i][headers[1]] + '</input>';
+            }
+            document.getElementById('clist').innerHTML = opt;
+        }
+        var headerRow = '';
+            var headers = readheaders(courses);
+            for(var i=0;i<headers.length;i++){
+                headerRow+="<th>"+headers[i]+"</th>";
+            };
+            document.getElementById("thead").innerHTML = headerRow;
+
+        var cb = document.getElementsByName('r');
+           if(cb.length > 0) {
+            var tableRow='';
+            var total=0;
+            var headers = readheaders(courses); 
+               for(var i=0;i<cb.length;i++){
+                   cb[i].addEventListener('click',function(){
+                        for(var j=0;j<courses.length;j++){
+                            if(courses[j][headers[0]] == this.value){
+                                var tr = '<tr>'
+                                    for(var h=0;h<headers.length;h++){
+                                        tr+='<td>'+ courses[j][headers[h]] + '</td>';
+                                    }
+                                    total+=courses[j][headers[2]];
+                                    tr+='</tr>';
+                                tableRow+=tr;
+                                console.log(tableRow);
+                            }
+                        }
+                        document.getElementById("tbody").innerHTML = tableRow;
+                        document.getElementById("total").innerText = total;
+                   },false);
+               } 
+                 
+           }
+
+
+           var products = [{ProductId:101, ProductName:"Laptop", CategoryName:"Electronics", Price:55666},
+           {ProductId:102, ProductName:"Mobile", CategoryName:"Electronics", Price:12000},          
+           {ProductId:101, ProductName:"burger", CategoryName:"Food", Price:55},
+           {ProductId:101, ProductName:"Wifi Router", CategoryName:"Electronics", Price:2200},
+           {ProductId:101, ProductName:"Pizza", CategoryName:"Food", Price:55666},
+           {ProductId:101, ProductName:"Wires", CategoryName:"Electrical", Price:122},
+           {ProductId:101, ProductName:"T-shirt", CategoryName:"Fashion", Price:888},
+           {ProductId:101, ProductName:"French Fries", CategoryName:"Food", Price:130},
+           {ProductId:101, ProductName:"Jeans", CategoryName:"Fashion", Price:1199},
+           {ProductId:101, ProductName:"Electric board", CategoryName:"Electrial", Price:200},
+           {ProductId:101, ProductName:"Shirt", CategoryName:"Fashion", Price:999},
+           {ProductId:101, ProductName:"pasta", CategoryName:"Food", Price:90},
+           {ProductId:101, ProductName:"Shoes", CategoryName:"Fashion", Price:1200},
+           {ProductId:101, ProductName:"Switches", CategoryName:"Electrical", Price:10},
+           {ProductId:101, ProductName:"glows", CategoryName:"Electricals", Price:55},
+           {ProductId:101, ProductName:"Speaker", CategoryName:"Electronics", Price:2000},
+        ];
+        plistdisplay(products);
+        
+        function plistdisplay(p){
+            var headers1 = readheaders1(p);
+            cat= ["Electronics" , "Fashion" , "Electrical" , "Food"];
+            var opt1="";
+            for(var i=0;i<cat.length;i++){
+                opt1+='<input type="radio" name="x" value="'+ cat[i] + '" >' + cat[i] + '</input>';
+            }
+            document.getElementById('plist').innerHTML = opt1;
+        }
+
+
+        var pb = document.getElementsByName('x');
+           if(pb.length > 0) {
+           
+            var headers1 = readheaders1(products); 
+               for(var i=0;i<pb.length;i++){
+                   pb[i].addEventListener('click',function(){
+                    var tableRow1='';
+                        for(var j=0;j<products.length;j++){
+                            if(products[j][headers1[2]] == this.value){
+                                var tr1 = '<tr>'
+                                    for(var h=0;h<headers1.length;h++){
+                                        tr+='<td>'+ products[j][headers1[h]] + '</td>';
+                                    }
+                                    tr1+='</tr>';
+                                tableRow1+=tr1;
+                                console.log(tableRow1);
+                            }
+                        }
+                        document.getElementById("tbody1").innerHTML = tableRow1;
+                        
+                   },false);
+               } 
+                 
+           }
+
+
+
+
+   
+
+    
+    };
+</script>
+<body>
+    <h1>the course list</h1>
+    <div id="clist">
+    </div>
+    <table>
+        <thead id="thead"> 
+            
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <div>
+        The total fee of the Course is:
+        <div id="total"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h1>Products</h1>
+    <br>
+    <br>
+    <div id="plist"></div>
+    <table>
+        <thead id="thead1"> 
+            
+        </thead>
+        <tbody id="tbody1">
+
+        </tbody>
+    </table>
+    
+</body>
+</html>

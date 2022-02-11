@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination Assisnment</title>
+    <link rel="stylesheet"href="./../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <script>        
+        window.onload = function(){
+
+            let currentpage=0;
+            let x = document.getElementsByClassName('#');
+                let y ="";
+                // let y = '<table>';
+                console.log(x.length);
+                console.log(x);
+                for (let i=0; i<x.length; i++){
+                    y+= `<tr> ${x[i].innerHTML} </tr>`;
+                    console.log(x[i].innerHTML);
+                }
+                // y += '</table>';
+                console.log(y);
+                document.getElementById('TableBody').innerHTML = y;
+                currentpage=0;
+
+            
+            document.getElementById('#').addEventListener('click', function(){
+                console.log('button # is pressed');
+                let x = document.getElementsByClassName('#');
+                let y ="";
+                // let y = '<table>';
+                console.log(x.length);
+                console.log(x);
+                for (let i=0; i<x.length; i++){
+                    y+= `<tr> ${x[i].innerHTML} </tr>`;
+                    console.log(x[i].innerHTML);
+                }
+                // y += '</table>';
+                console.log(y);
+                document.getElementById('TableBody').innerHTML = y;
+                currentpage=0;
+            }, false)
+
+            document.getElementById('@1').addEventListener('click', function(){
+                console.log('button 1 is pressed');
+                let x = document.getElementsByClassName('Page#1');
+                let y ="";
+                // let y = '<table>';
+                console.log(x.length);
+                console.log(x);
+                for (let i=0; i<x.length; i++){
+                    y+= `<tr> ${x[i].innerHTML} </tr>`;
+                    console.log(x[i].innerHTML);
+                }
+                // y += '</table>';
+                console.log(y);
+                document.getElementById('TableBody').innerHTML = y;
+                currentpage=1;
+            }, false)
+
+            document.getElementById('@2').addEventListener('click', function(){
+                console.log('button 2 is pressed');
+                let x = document.getElementsByClassName('Page#2');
+                let y ="";
+                // let y = '<table>';
+                console.log(x.length);
+                console.log(x);
+                for (let i=0; i<x.length; i++){
+                    y+= `<tr> ${x[i].innerHTML} </tr>`;
+                    console.log(x[i].innerHTML);
+                }
+                // y += '</table>';
+                console.log(y);
+                document.getElementById('TableBody').innerHTML = y;
+                currentpage=2;
+            }, false)
+
+            document.getElementById('@3').addEventListener('click', function(){
+                console.log('button 3 is pressed');
+                let x = document.getElementsByClassName('Page#3');
+                let y ="";
+                // let y = '<table>';
+                console.log(x.length);
+                console.log(x);
+                for (let i=0; i<x.length; i++){
+                    y+= `<tr> ${x[i].innerHTML} </tr>`;
+                    console.log(x[i].innerHTML);
+                }
+                // y += '</table>';
+                console.log(y);
+                document.getElementById('TableBody').innerHTML = y;
+                currentpage=3;
+            }, false)
+
+            document.getElementById('@4').addEventListener('click', function(){
+                console.log('button 4 is pressed');
+                let x = document.getElementsByClassName('Page#4');
+                let y ="";
+                // let y = '<table>';
+                console.log(x.length);
+                console.log(x);
+                for (let i=0; i<x.length; i++){
+                    y+= `<tr> ${x[i].innerHTML} </tr>`;
+                    console.log(x[i].innerHTML);
+                }
+                // y += '</table>';
+                console.log(y);
+                document.getElementById('TableBody').innerHTML = y;
+                currentpage=4;
+            }, false)
+
+            document.getElementById('@next').addEventListener('click', function(){
+                console.log('button next is pressed');
+                let x = currentpage;
+                console.log(x);
+                if(x === 0){
+                    console.log("blah blah")
+                        
+                            let x = document.getElementsByClassName('Page#1');
+                            let y ="";
+                            // let y = '<table>';
+                            console.log(x.length);
+                            console.log(x);
+                            for (let i=0; i<x.length; i++){
+                                y+= `<tr> ${x[i].innerHTML} </tr>`;
+                                console.log(x[i].innerHTML);
+                            }
+                            // y += '</table>';
+                            console.log(y);
+                            document.getElementById('TableBody').innerHTML = y;
+                            currentpage=1;                            
+                    }
+                    else if(x==1){
+            
+                            let x = document.getElementsByClassName('Page#2');
+                            let y ="";
+                            // let y = '<table>';
+                            console.log(x.length);
+                            console.log(x);
+                            for (let i=0; i<x.length; i++){
+                                y+= `<tr> ${x[i].innerHTML} </tr>`;
+                                console.log(x[i].innerHTML);
+                            }
+                            // y += '</table>';
+                            console.log(y);
+                            document.getElementById('TableBody').innerHTML = y;
+                            currentpage=2;                            
+                    }
+                    else if(x==2){
+                        
+                            let x = document.getElementsByClassName('Page#3');
+                            let y ="";
+                            // let y = '<table>';
+                            console.log(x.length);
+                            console.log(x);
+                            for (let i=0; i<x.length; i++){
+                                y+= `<tr> ${x[i].innerHTML} </tr>`;
+                                console.log(x[i].innerHTML);
+                            }
+                            // y += '</table>';
+                            console.log(y);
+                            document.getElementById('TableBody').innerHTML = y;
+                            currentpage=3;
+                    }
+                    else if(x==3){
+                        
+                        let x = document.getElementsByClassName('Page#4');
+                        let y ="";
+                        // let y = '<table>';
+                        console.log(x.length);
+                        console.log(x);
+                        for (let i=0; i<x.length; i++){
+                            y+= `<tr> ${x[i].innerHTML} </tr>`;
+                            console.log(x[i].innerHTML);
+                        }
+                        // y += '</table>';
+                        console.log(y);
+                        document.getElementById('TableBody').innerHTML = y;
+                        currentpage=4;
+                }
+                    else{
+                        console.log("Nothing Found!!")
+                    }
+                
+            }, false)
+
+
+            document.getElementById('@previous').addEventListener('click', function(){
+                console.log('button previous is pressed');
+                let x = currentpage;
+                console.log(x);
+                if(x === 4){
+                    console.log("blah blah")
+                    
+                        let x = document.getElementsByClassName('Page#3');
+                            let y ="";
+                            // let y = '<table>';
+                            console.log(x.length);
+                            console.log(x);
+                            for (let i=0; i<x.length; i++){
+                                y+= `<tr> ${x[i].innerHTML} </tr>`;
+                                console.log(x[i].innerHTML);
+                            }
+                            // y += '</table>';
+                            console.log(y);
+                            document.getElementById('TableBody').innerHTML = y;
+                            currentpage=3;      
+                                             
+                    }
+                else if(x === 3){
+                    console.log("blah blah")
+                    
+                        let x = document.getElementsByClassName('Page#2');
+                            let y ="";
+                            // let y = '<table>';
+                            console.log(x.length);
+                            console.log(x);
+                            for (let i=0; i<x.length; i++){
+                                y+= `<tr> ${x[i].innerHTML} </tr>`;
+                                console.log(x[i].innerHTML);
+                            }
+                            // y += '</table>';
+                            console.log(y);
+                            document.getElementById('TableBody').innerHTML = y;
+                            currentpage=2;      
+                                             
+                    }
+                    else if(x==2){
+            
+                        let x = document.getElementsByClassName('Page#1');
+                            let y ="";
+                            // let y = '<table>';
+                            console.log(x.length);
+                            console.log(x);
+                            for (let i=0; i<x.length; i++){
+                                y+= `<tr> ${x[i].innerHTML} </tr>`;
+                                console.log(x[i].innerHTML);
+                            }
+                            // y += '</table>';
+                            console.log(y);
+                            document.getElementById('TableBody').innerHTML = y;
+                            currentpage=1;                            
+                    }
+                    else if(x==1){
+                        
+                        let x = document.getElementsByClassName('#');
+                        let y ="";
+                        // let y = '<table>';
+                        console.log(x.length);
+                        console.log(x);
+                        for (let i=0; i<x.length; i++){
+                            y+= `<tr> ${x[i].innerHTML} </tr>`;
+                            console.log(x[i].innerHTML);
+                        }
+                        // y += '</table>';
+                        console.log(y);
+                        document.getElementById('TableBody').innerHTML = y;
+                        currentpage=0;
+                    }
+                    else{
+                        console.log("Nothing Found!!")
+                    }
+                
+            }, false)
+        }
+    </script>
+</head>
+<body style="padding: 20px;">
+    <center><h3>The Pagination Assisnment</h3><br></center>
+    
+            <div>
+                <table class="table table-bordered" >
+                    <thead>
+                        <tr >
+                            <th>EmpNo</th>
+                            <th>EmpName</th>
+                            <th>DeptName</th>
+                            <th>Salary</th>
+                        </tr>
+                        <tbody id="TableBody">
+
+                        </tbody>
+                    </thead>
+                </table>
+            </div>
+        <div class="table-responsive" >
+            <table class="table table-bordered small"  hidden = true>
+                <thead>
+                    <tr class="table-dark">
+                        <th>EmpNo</th>
+                        <th>EmpName</th>
+                        <th>DeptName</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody  >
+                    <!--  -->
+                    <tr class="#">
+                        <td>01</td>
+                        <td>Anurag</td>
+                        <td>IT</td>
+                        <td>600000</td>
+                        
+                    </tr>
+                    <tr class="#">
+                        <td>02</td>
+                        <td>Arun</td>
+                        <td>HR</td>
+                        <td>550000 </td>
+                       
+                    </tr>
+                    <tr class="#">
+                        <td>03</td>
+                        <td>Dhawla</td>
+                        <td>IT</td>
+                        <td>380000 </td>
+                       
+                    </tr>
+                    <tr class="#">
+                        <td>04</td>
+                        <td>Hardik</td>
+                        <td>HR</td>
+                        <td>300000</td>
+        
+                    </tr>
+                    <tr class="#">
+                        <td>05</td>
+                        <td>Harsh G</td>
+                        <td>IT</td>
+                        <td>453499</td>
+                        
+                    </tr>
+                    <tr class="#">
+                        <td>06</td>
+                        <td>Harsh G</td>
+                        <td>HR</td>
+                        <td>499999</td>
+                        
+                    </tr>
+                    <tr class="#">
+                        <td>07</td>
+                        <td>Mahesh</td>
+                        <td>Training</td>
+                        <td>1000000</td>
+                        
+                    </tr>
+                    <tr class="#">
+                        <td>08</td>
+                        <td>Nayan</td>
+                        <td>AWS</td>
+                        <td>400000</td>
+                        
+                    </tr>
+                    <tr class="#">
+                        <td>09</td>
+                        <td>Mayur</td>
+                        <td>IT</td>
+                        <td>500000</td>
+                        
+                    </tr>
+                    <tr class="#">
+                        <td>10</td>
+                        <td>Palkesh</td>
+                        <td>AWS</td>
+                        <td>400000</td>
+                        
+                    </tr>
+                    <tr class="#">
+                        <td>11</td>
+                        <td>Siddarth</td>
+                        <td>IT</td>
+                        <td>500000</td>
+                        
+                    </tr>
+                    <tr class="#">
+                        <td>12</td>
+                        <td>Vinal</td>
+                        <td>IT</td>
+                        <td>400000</td>
+                        
+                    </tr>
+                    <!-- MAIN Pagination process -->
+                    <tr class="Page#1">
+                        <td>01</td>
+                        <td>Anurag</td>
+                        <td>IT</td>
+                        <td>600000</td>
+                        
+                    </tr>
+                    <tr class="Page#1">
+                        <td>02</td>
+                        <td>Arun</td>
+                        <td>HR</td>
+                        <td>550000 </td>
+                       
+                    </tr>
+                    <tr class="Page#1">
+                        <td>03</td>
+                        <td>Dhawla</td>
+                        <td>IT</td>
+                        <td>380000 </td>
+                       
+                    </tr>
+                    <tr class="Page#2">
+                        <td>04</td>
+                        <td>Hardik</td>
+                        <td>HR</td>
+                        <td>300000</td>
+        
+                    </tr>
+                    <tr class="Page#2">
+                        <td>05</td>
+                        <td>Harsh G</td>
+                        <td>IT</td>
+                        <td>453499</td>
+                        
+                    </tr>
+                    <tr class="Page#2">
+                        <td>06</td>
+                        <td>Harsh G</td>
+                        <td>HR</td>
+                        <td>499999</td>
+                        
+                    </tr>
+                    <tr class="Page#3">
+                        <td>07</td>
+                        <td>Mahesh</td>
+                        <td>Training</td>
+                        <td>1000000</td>
+                        
+                    </tr>
+                    <tr class="Page#3">
+                        <td>08</td>
+                        <td>Nayan</td>
+                        <td>AWS</td>
+                        <td>400000</td>
+                        
+                    </tr>
+                    <tr class="Page#3">
+                        <td>09</td>
+                        <td>Mayur</td>
+                        <td>IT</td>
+                        <td>500000</td>
+                        
+                    </tr>
+                    <tr class="Page#4">
+                        <td>10</td>
+                        <td>Palkesh</td>
+                        <td>AWS</td>
+                        <td>400000</td>
+                        
+                    </tr>
+                    <tr class="Page#4">
+                        <td>11</td>
+                        <td>Siddarth</td>
+                        <td>IT</td>
+                        <td>500000</td>
+                        
+                    </tr>
+                    <tr class="Page#4">
+                        <td>12</td>
+                        <td>Vinal</td>
+                        <td>IT</td>
+                        <td>400000</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+                
+        <ul class="pagination pagination-sm justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" id="#">Main Page</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" id="@previous">Previous</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" id="@1">1</a>
+            </li>
+            <li class="page-item ">
+                <a  class="page-link" href="#" id="@2" active>2</a>
+            </li>
+            <li  class="page-item">
+                <a class="page-link" href="#" id="@3">3</a>
+            </li>
+            <li  class="page-item">
+                <a class="page-link" href="#" id="@4">4</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" id="@next">Next</a>
+            </li>
+        </ul>
+        <br>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style> 
+
+            .chilled {
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            display: inline-block;
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 240px;
+            }
+
+            .field {
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            display: inline-block;
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 240px;
+            }
+            .field.field-short {
+            width: 70px;
+            }
+            .tel-field{
+                width: 100px;
+            }
+            .mob-field{
+                width: 200px;
+            }
+
+            .tele-field{
+                width: 150px;
+            }
+
+            .address-field{
+                height: 100px;
+                width: 300px;
+            }
+
+            .message {
+            display: inline-block;
+            }
+            
+            :required + .message::before {
+                color: red;
+            content: "* ";
+            }
+            
+            .text-field:focus:required:valid {
+            outline: green solid 2px;
+            }
+            .text-field:focus:required:invalid {
+            outline: orange solid 2px;
+            }
+
+            .first-name-field:focus:invalid + .message::after {
+            color: orange;
+            content: "Required your first name";
+            }
+        
+            .last-name-field:focus:invalid + .message::after {
+            color: orange;
+            content: "Required your last name";
+            }
+            .initials-field:focus:invalid + .message::after {
+            color: orange;
+            content: "Required your Age";
+            }
+                        
+            .tel-field:focus:invalid + .message::after {
+            color: orange;
+            content: "Required telephone number";
+            }
+
+            .mob-field:focus:invalid + .message::after{
+                color: orange;
+            content: "Required Mobile number";
+            }
+            
+            .email-field:focus:invalid + .message::after {
+            color: orange;
+            content: "Required email address";
+            }
+
+            .address-field:focus:invalid + .message::after {
+            color: orange;
+            content: "Required address";
+        }
+            
+    </style>
+
+<script>
+    window.onload = function(){
+        let input = document.getElementsByClassName("field text-field");
+        let button = document.getElementById("btnsubmit");
+        let count = 0;
+        button.disabled = true;
+        for (var i=0; i<input.length; i++){
+
+        input[i].addEventListener("change", function(){
+            if (document.getElementsByClassName("field text-field").value === ""){
+            }
+            else{
+                count++;
+            }
+            if (count == input.length ){
+                button.disabled = false;
+            }
+        }, false)
+    }
+    
+    button.addEventListener('click', function(){
+        if(count == input.length){
+        
+        console.log(count, input.length);
+    }
+    }, false)
+    
+    }
+</script>
+</head>
+<body>
+    <center>
+        <form class="reg-form">
+            <h1 style="color: brown;">Registration Form</h1>
+    
+            <div class="field-row">
+               <label class="form-label" for="firstName">First name</label>
+               <input type="text" id="firstName" style="text-transform: capitalize;" pattern="[A-Za-z]{1,15}" placeholder="Enter First Name" class="field text-field first-name-field" required>
+               <span class="message"></span>
+            </div>
+    
+            <div class="field-row">
+                <label class="form-label cf" for="lastName">Middle name</label>
+                <input type="text" id="Middlename" placeholder="Enter Middle Name" class="chilled text-field middle-name-field">
+                <span class="message"></span>
+             </div>
+    
+            <div class="field-row">
+               <label class="form-label cf" for="lastName">Last name</label>
+               <input type="text" id="lastName" style="text-transform: capitalize;" pattern="[A-Za-z]{1,15}" placeholder="Enter Last Name" class="field text-field last-name-field" required>
+               <span class="message"></span>
+            </div>
+    
+            <div class="field-row">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your Email" class="field text-field email-field" required>
+                <span class="message"></span>
+             </div>
+    
+            <div class="field-row">
+               <label class="form-label" for="initials">Age</label>
+               <input type="number" id="initials" placeholder="Must be above 18" min="18" max="99" class="field text-field initials-field" required>
+               <span class="message"></span>
+            </div>
+            <br>
+            <div class="field-row">
+                <label class="form-label cf" for="gender">Gender</label>
+          
+              <input type="radio" value="Male" name="gender" > Male   
+              <input type="radio" value="Female" name="gender"> Female   
+              <input type="radio" value="Other" name="gender"> Transgender 
+            </div>
+            <br>
+    
+            <div class="field-row">
+               <label class="form-label" for="tel">Telephone</label> <label>+91</label>
+               <input type="tel" pattern="[0-9]{5}" min="0" max="5" id="tel" placeholder="Extension" class="field text-field tel-field" required>
+               <input type="tel" pattern="[0-9]{7}" min="0" max="7" id="tele" placeholder="Digits" class="field text-field tele-field" required>
+               <span class="message"></span>
+            </div>
+    
+            <div class="field-row">
+                <label class="form-label" for="tel">Mobile</label> <label>+91</label>
+                <input type="tel" id="mob" max="10" pattern="[6789][0-9]{9}" placeholder="Mobile Number" class="field text-field mob-field" required>
+                <span class="message"></span>
+             </div>
+    
+            <div class="field-row">
+               <label class="form-label" for="tel">Permanent Address</label>
+               <input type="text" id="address" placeholder="Enter Home Address" class="field text-field address-field" required>
+               <span class="message"></span>
+            </div>
+            
+            <div class="field-row">
+               <label class="form-label"></label>
+               <button id="btnsubmit" class="form-button">Register</button>
+            </div>
+         </form>
+    </center>
+</body>
+</html>

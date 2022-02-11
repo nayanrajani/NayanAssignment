@@ -1,0 +1,28 @@
+work divide
+- html + css + bootstrap + login facility 
+	- routing pages
+		- Login Page
+			- Username and password
+		- Get All Product
+		- Add product
+		- Update product
+
+	- wil be on same server
+		- Using app.get('/', (req.res)=>{method});
+
+
+- database + api(data access) + crud + authentication 
+	- database table 
+		- Product (APi with Data Access)
+			- Product Name 
+			- product ID
+			- Category
+			- Manufacturing
+			- Product price
+
+	- Autherntication
+		- Username and password
+		- user session detection(hold)
+
+
+

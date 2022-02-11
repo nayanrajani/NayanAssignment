@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Available</title>
+    <script>
+        window.onload = function()
+        {
+            var Course = [
+                {CourseId : 01 , CourseName : "C" , Fees : 300},
+
+                {CourseId : 02 , CourseName : "C#" , Fees : 800},
+
+                {CourseId : 03 , CourseName : "C++" , Fees : 500},
+
+                {CourseId : 04 , CourseName : "C & C++ " , Fees : 600},
+
+                {CourseId : 05 , CourseName : "Java" , Fees : 2500},
+
+                {CourseId : 06 , CourseName : "Node.js" , Fees : 2800},
+
+                {CourseId : 07 , CourseName : "Python" , Fees : 3000},                
+                
+                {CourseId : 08 , CourseName : "JavaScript" , Fees : 5000},
+            ]
+            var lstCourse = document.getElementById('lstCourse');
+            var headers = [];
+            for(var val in Course[0])
+            {
+                console.log(val);
+                headers.push(val);
+            }
+            console.log(headers);
+            var lstCourseHTML = "";
+            for(var i = 0 ; i < Course.length; i++)
+            {
+                lstCourseHTML+= "<input type='checkbox' name = 'CourseSelected' value='"+Course[i]['Fees']+"' id= '"+Course[i]['CourseName']+"'>"+Course[i]['CourseName']+  " </input><br><br>"
+            }
+            lstCourse.innerHTML = lstCourseHTML;
+            var total_fees = 0;
+            var courseSelected = document.getElementsByName('CourseSelected');
+            var btnDone = document.getElementById('done');
+            btnDone.addEventListener('click',function()
+            {
+                document.getElementById('fees').innerHTML = "<br>Total Fees:-   <b>"+total_fees+"</b>  INR<br>";
+            },
+            false)
+            if(courseSelected.length>0)
+            {
+                for(let id = 0 ; id < courseSelected.length ; id++)
+                {
+                    courseSelected[id].addEventListener('click',function()
+                    {
+                        if(courseSelected[id].checked)
+                        {
+                            console.log("Checked");
+                            // console.log(courseSelected[id].value)
+                            total_fees += parseInt(courseSelected[id].value);
+                        }
+                        else{
+                            console.log("Un-checked")
+                            total_fees -= parseInt(courseSelected[id].value);
+                        }
+                        
+                    },
+                    false)
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1 style="color: brown;">Courses that we offer are mentioned below</h1>
+        <h2 >please check the box if you want to attend the course:</h2>
+        <div id="lstCourse"></div>
+        <h3 style="color: green;">Please click on submit button after selecting the course</h3><button id="done">Submit</button>
+        <br>
+        <div id="fees" value="done"></div>
+        </center>
+    
+</body>
+</html>

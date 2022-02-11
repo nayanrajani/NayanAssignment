@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="./Product.js"></script>
+
+</head>
+<body>
+    <body>
+        <div>
+            <input type="button" style="float:right; margin-right: 10px;" value="Log Out" id='Signout'> 
+            <h5 id="logged" style="float:right; margin-right: 10px;"></h5><br>
+        </div>    
+        <center>
+        <h3>Available Products</h3>
+        <h5><div id='out'></div></h5>
+        <div id='cont'>
+                <h6>Search Product : <input type="number" id="searchid"> 
+                <input type="button" value="Search" id='searchbtn'></h6><br>
+                <input type="button" value="Add Product" id='addpro'> &emsp; &emsp;
+                <input type="button" value="Delete by ID" id='delpro'> &emsp; &emsp;
+                <input type="button" value="Update by ID" id='uppro'><br><br>
+                <div id='del'></div> <br>
+                <div id='msg'></div><br>
+                <div id="prod" class="table-responsive"></div>
+                
+        </div>    
+    </center>
+        <a style="display:none;" href="Signout.html" id="Signoutbtn"></a>
+        <a style="display:none;" href="AddProduct.html" id="addProduct"></a>
+        <a style="display:none;" href="UpdateProduct.html" id="updateProduct"></a>
+    </body>
+</body>
+</html>

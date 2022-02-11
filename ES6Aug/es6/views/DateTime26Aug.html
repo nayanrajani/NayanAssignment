@@ -1,0 +1,106 @@
+<html>   
+<head>   
+    <title> Calculate days between dates </title>   
+      <script>  
+
+        function YearsDifference(){
+
+            var dateI1 = document.getElementById("dateInput1").value;  
+         var dateI2 = document.getElementById("dateInput2").value;  
+  
+        //define two date object variables to store the date values  
+         var date1 = new Date(dateI1);  
+         var date2 = new Date(dateI2);  
+
+
+              
+            var diff = date2.getTime() - date1.getTime();   
+            
+            var daydiff = (diff / 31536000000).toFixed(0); 
+            console.log("years: ", daydiff);  
+              
+            return document.getElementById("result").innerHTML =    
+                daydiff + " years between both dates. "; 
+            // document.write(" Total numbers of years since <b> 2nd October 1969 </b> is: <b> " + daydiff + " years </b>" ); 
+          
+        }
+
+       function daysDifference() {  
+         //define two variables and fetch the input from HTML form  
+         var dateI1 = document.getElementById("dateInput1").value;  
+         var dateI2 = document.getElementById("dateInput2").value;  
+  
+        //define two date object variables to store the date values  
+         var date1 = new Date(dateI1);  
+         var date2 = new Date(dateI2);  
+   
+        //calculate time difference  
+         var time_difference = date2.getTime() - date1.getTime();  
+  
+         //calculate days difference by dividing total milliseconds in a day  
+         var result = time_difference / (1000 * 60 * 60 * 24);  
+  
+         return document.getElementById("result").innerHTML =    
+              result + " days between both dates. ";  
+       }
+    
+      </script>    
+</head>    
+<body>   
+    <center>
+    
+    <h2 style="color: brown">    
+            Calculate milliseconds, seconds, minutes, hours, days, and year between date and time
+        <br> <br> </h2>   
+    
+        Select Date:
+        <input type="date" id="dateInput1">   
+        &emsp;  
+
+        Select Time:
+            <input type="time" id="TimeInput1"> 
+            <br><br>
+
+        Select Date:
+          
+            <input type="date" id="dateInput2">   
+            &emsp;      
+
+        Select Time:
+            <input type="time" id="TimeInput2"> 
+            <br><br>
+        
+        <button onclick="millisecondDifference()">   
+            Calculate number of Milliseconds   
+        </button>&emsp;
+
+        <button onclick="secondsDifference()">   
+            Calculate number of Seconds   
+        </button>&emsp;
+        
+        <button onclick="minutesDifference()">   
+            Calculate number of Minutes   
+        </button><br><br>
+        
+        <button onclick="hoursDifference()">   
+            Calculate number of Hours   
+        </button>&emsp;
+
+        <button onclick="daysDifference()">   
+          Calculate number of Days   
+        </button>   &emsp;
+        <button onclick="YearsDifference()">   
+            Calculate number of Years   
+        </button> <br><br>
+
+        <button onclick="OverallDifference()">   
+            Overall Difference
+        </button>
+    </p>   
+    
+    <h3 style="color:red" id="result" ></h3>  
+    <h3 style="color:red" id="final" ></h3> 
+</center> 
+    
+</body>    
+</html>  

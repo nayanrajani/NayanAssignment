@@ -1,0 +1,49 @@
+/* #table {
+    border: 1.5px solid black;
+    width: 100%;
+    padding: 10px;
+}
+
+#result{
+    background: red;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    font-size: 14px;
+    color: black;
+    height: 20%;
+}
+
+#title{
+    width: 100%;
+    color:brown;
+    border: solid black 2px;
+}
+
+input[type="text"]{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #2b293d;
+    height: 20%;
+    color: white;
+    font-size: 24px;
+    
+}
+
+input[type="button"]{
+    
+    background: #cad2c5;
+    color: black;
+    border: 1.5px solid black;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    font-size: 14px;
+    font-weight: bold;
+    height: 20%;
+    
+} */

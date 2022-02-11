@@ -1,0 +1,3 @@
+command to convert: babel .\source\test.js -o .\build\test.build.js
+
+run current file: node .\source\Assisnment27Aug.js

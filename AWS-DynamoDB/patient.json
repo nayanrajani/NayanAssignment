@@ -1,0 +1,19 @@
+[
+  {
+
+      "WardName": "Covid",
+
+      "PatientId": "Pt-2",
+
+      "Age": "23",
+
+      "Bill": "4567",
+
+      "City": "mumbai",
+
+      "DoctorName": "MSD",
+
+      "PatientName": "Yuvraj Singh"
+
+  }
+]

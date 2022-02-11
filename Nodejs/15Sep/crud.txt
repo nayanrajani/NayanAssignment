@@ -1,0 +1,30 @@
+
+Register user
+{
+  "UserId": 23,
+  "Email": "okay@gmail.com",
+  "Password": "pas@123"
+}
+
+Register Role
+{
+  "RoleId": "23",
+  "RoleName": "Admin" or "Operator" or "Manager"
+}
+
+User in Role
+{
+  "RelationId" : 23,
+  "UserId": 23,
+  "RoleId": 23
+}
+
+Login user
+{
+  "Email": "okay@gmail.com",
+  "Password": "pas@123"
+}
+
+Get Data
+
+http://localhost:9080/api/app/get

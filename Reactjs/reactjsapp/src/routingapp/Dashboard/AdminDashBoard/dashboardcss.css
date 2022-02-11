@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://www.chartrequest.com/wp-content/uploads/2018/11/iStock-927897070.jpg);
+  /* background-image: url(https://www.uticaod.com/storyimage/NY/20181125/NEWS/181129725/AR/0/AR-181129725.jpg); */
+  background-repeat: no-repeat;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: red;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}

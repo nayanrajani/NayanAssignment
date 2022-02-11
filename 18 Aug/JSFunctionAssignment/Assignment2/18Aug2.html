@@ -1,0 +1,79 @@
+
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person UI</title>
+    <script>
+        window.onload = function(){
+            // An Array of JSON Objects
+                var persons = [];
+                var hd = ['ID', 'Name', 'Language', 'Age'];
+                var id = 01;
+                
+                var btn = document.getElementById('submit');
+                btn.addEventListener('click', function(){
+                    var temp = {};
+                    temp[hd[0]] = id;
+                    for(var i=1; i<hd.length; i++){
+                        temp[hd[i]] = document.getElementById(hd[i]).value;
+                        document.getElementById(hd[i]).value = "";
+                    }
+                    id++
+                    persons.push(temp);
+                    console.log(persons);
+                    var headers = [];
+                for(var p in persons[0]){
+                    headers.push(p);
+                }
+                console.log(headers);
+                var headerRow = '';
+                for(var i=0;i<headers.length;i++){
+                    headerRow+="<th>"+headers[i]+"</th>";
+                };
+                document.getElementById("thead").innerHTML = headerRow;
+                var tableRow='';
+                for(var j=0;j<persons.length;j++){
+                    var tr = '<tr>'
+                    for(var h=0;h<headers.length;h++){
+                        tr+='<td>'+ persons[j][headers[h]] + '</td>';
+                    }
+                    tableRow+=tr;
+                }
+            
+                document.getElementById('tbody').innerHTML = tableRow;
+                }, false)
+        }
+    </script>
+</head>
+<body>
+    <Center>
+        <h1>Enter the data to process</h1>
+        <label for="">Name:  </label>
+    <input type="text" id="Name" ><br><br>
+
+    <label for="">Email: </label>
+    <input type="text" id="Language" ><br><br>
+
+    
+    <label for="">Age:   </label>
+    <input type="text" id="Age" ><br><br>
+    <input type="button" id="submit"  value="Submit">
+   
+    <!-- <input type="button" id="displayTable" value="Show Data"> -->
+    <h3>All details are-</h3>
+    <table border="1px">
+        <thead id="thead"> 
+            
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    </Center>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "nodejstest",
+  "version": "1.0.0",
+  "description": "- Plan for Test Approaches\r     - API Testing with AUto-Calls to the using Command Line Test Script (Recommended)\r         - mocha\r             - COmamnd Line tool that runs the Code that Makes Http calls to REST APIs\r                 - JavaScript Test Framework runs on Node.js as well as in browser\r                 - Uses to make an Async calls to REST APIs\r                 - Manages an accurate and flexible testing execution\r                     - Successful Test\r                     - Crash Test aka Error Test\r                         - npm install -g mocha\r                 - mocha \r                     - Read all test files in 'test' folder and run them\r                     - Mocha Loads in the Node.js Process\r                         - Load the Test File(s)\r                         - Evaluate each Test Case in Test File(s)\r                             - Uses the Supportive Libraries\r                                 - Chai\r                                     - Assertion Library for Unit Tets\r                                         - Assert the Expected Result from the Test with Actual Result returned from the test\r                                     - Chai uses 'Request' module of Node.js to make REST API calls\r                         - npm install --save-dev chai mocha request    \r             - Guldelines for Testing REST APIs using Mocha+Chai+Request\r                 - Implement All calls are Async calls     \r                     - Make sure that the Test Case has the Promise or async operations subscription object\r                     - use the 'done()', thsi will make sure that the asnc call is completed and the promise is resolved                 \r     - Use the Sweagger UI (Open SOurce Projects)\r         - Used Large Scale Enterprise Level REST APIs   \r         - THis is a tool shed with the client so that the client app can visit and experience the REST APIs with URLs\r         - The Swagger is for Trying the REST API and not for TESTING",
+  "main": "service.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "request": "^2.88.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

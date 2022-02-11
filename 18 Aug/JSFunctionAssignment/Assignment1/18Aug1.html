@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persons Details</title>
+    <script src="./18Aug1.js"></script>
+    <script>
+        window.onload = function()
+        {
+            var PersonDetail = [
+                {PersonId:' ' ,PersonName:' ',City:' ',Age:' ',Gender:''},
+            ]
+
+            //header for table
+            var header = [];
+            for(var temp in PersonDetail[0])
+            {
+                header.push(temp);
+            }
+
+            //function which shows table
+            function showTable(){
+                var showtable = document.getElementById('showtable');
+                showtable.innerHTML = headingHTML(header) + bodyHTML(PersonDetail,header);
+            }
+           
+            //On click submit data will go in table
+            var btnSubmit = document.getElementById("btnSubmit");
+            btnSubmit.addEventListener('click', function(){
+            var pId = document.getElementById("pid").value;
+            var pName = document.getElementById("pname").value;
+            var pCity = document.getElementById("pcity").value;
+            var pAge = document.getElementById("page").value;
+            var pGender = document.getElementById("pgender").value;
+            var pObj = new pDetail(PersonDetail);
+            pObj.addUser(PersonId=pId,PersonName=pName,City=pCity,Age=pAge,Gender=pGender);
+            showTable();
+            } ,false);
+
+            //On click reset all inputs will blank
+            var btnReset = document.getElementById("btnReset");
+            btnReset.addEventListener('click', function(){
+            var inputs = document.getElementsByClassName("per");
+            for(var i=0 ; i<inputs.length; i++)
+                inputs[i].value = '';
+
+            } ,false);
+
+            //Delete button code
+            var btnDelete = document.getElementById("btnDelete");
+            btnDelete.addEventListener('click', function(){
+            var dd = parseInt(document.getElementById("pdelete").value);
+            for(var i=0 ; i<PersonDetail.length;i++)
+            {
+                if(PersonDetail[i].PersonId == dd){
+                    PersonDetail.splice(i,1);
+                    showTable();
+                    break;
+                }
+            }
+
+            } ,false);
+
+            //Edit button code
+            var btnEdit = document.getElementById("btnEdit");
+            btnEdit.addEventListener('click', function(){
+            var ed = parseInt(document.getElementById("pedit").value);
+            var temp=0;
+            for(var i=0 ; i<PersonDetail.length;i++)
+            {
+                if(PersonDetail[i].PersonId == ed){
+                   document.getElementById("pid").value=PersonDetail[i].PersonId; 
+                   document.getElementById("pname").value=PersonDetail[i].PersonName;
+                   document.getElementById("pcity").value=PersonDetail[i].City;
+                   document.getElementById("page").value=PersonDetail[i].Age;
+                   document.getElementById("pgender").value=PersonDetail[i].Gender;
+                    temp=i;
+                }
+            }
+            document.getElementById("btnUpdate").addEventListener('click', function(){
+                console.log(document.getElementById("pid").value,PersonDetail[temp].PersonId);
+                PersonDetail[temp].PersonId=document.getElementById("pid").value;
+                PersonDetail[temp].PersonName=document.getElementById("pname").value;
+                PersonDetail[temp].City=document.getElementById("pcity").value;
+                PersonDetail[temp].Age=document.getElementById("page").value; 
+                PersonDetail[temp].Gender=document.getElementById("pgender").value;
+                showTable();
+               }, false);
+
+            } ,false);
+            
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1 style="color: brown;">YAMAHA Employees</h1>
+        <br>
+        <table >
+            <tr>
+                <td>ID</td>
+                <td><input type="text" id="pid" class="per"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="pname" class="per"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" id="pcity" class="per"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="text" id="page" class="per"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="text" id="pgender" class="per"></td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <input type="button" value="Submit" id="btnSubmit">
+                </td>
+                <td>
+                    <br>
+                    <input type="button" value="Reset" id="btnReset">
+                </td>
+            
+                <td>
+                    <br>
+                        <input type="button" value="Update" id="btnUpdate">
+                </td>
+                
+                
+            </tr>
+        
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td style="color: brown;">Enter Id to delete</td>
+                <td><input type="text" id="pdelete"></td>
+                <td>
+                    <input type="button" value="Delete" id="btnDelete">
+                </td>
+            </tr>
+            <tr>
+                <td style="color: blue;">Enter Id to Edit details</td>
+                <td><input type="text" id="pedit"></td>
+                <td>
+                    <input type="button" value="Edit" id="btnEdit">
+                </td>
+            </tr>
+            
+                
+        </table>
+        <br>
+    
+        <table style="border: 1px dashed;" id="showtable"></table>
+    </center>
+</body>
+</html>

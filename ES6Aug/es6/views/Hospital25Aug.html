@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./../build/Hospital25Aug.build.js"></script>
+    <style> 
+
+        .chilled {
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 15px;
+        width: 240px;
+        }
+
+        .field {
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 15px;
+        width: 240px;
+        }
+        .field.field-short {
+        width: 70px;
+        }
+
+        .message {
+        display: inline-block;
+        }
+        
+        :required + .message::before {
+            color: red;
+        content: "* ";
+        }
+        
+        .text-field:focus:required:valid {
+        outline: green solid 2px;
+        }
+        .text-field:focus:required:invalid {
+        outline: orange solid 2px;
+        }
+
+        .first-name-field:focus:invalid + .message::after {
+        color: orange;
+        content: "Required Full name";
+        }
+    
+        .age-field:focus:invalid + .message::after {
+        color: orange;
+        content: "Required age";
+        }
+        .room-field:focus:invalid + .message::after {
+        color: orange;
+        content: "Required Room number";
+        }
+    </style>
+
+</head>
+<!-- 
+    PatientId: Used as Key and will be Auto Generated
+*PatientName, must be string and Mandatory
+*DoctorName, Must be String and Mandatory,
+*Age, Numeric Mandatory,
+*Gender, String, Mandatory
+*Dieses, String, MAndatory
+*General, Cancer, Heart, Sugar, Pnumonia, etc.
+*Ward, (General, Special)
+*RoomNo 
+-->
+<body style="text-align: center; ">
+    <center>
+        <h1 style="color: crimson;">Choithram Information</h1>
+        <form>
+            <div class="field-row">
+    <table>
+        <tr>
+            <td>
+                Patient Name
+            </td>
+            <td>
+                <input type="text" class="field text-field first-name-field" pattern="[A-Za-z]{1,15}" id="Patient" style="text-transform: capitalize;" placeholder="Enter Patient Name" required>
+                <span class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Doctor Name
+            </td>
+            <td>
+                <input type="text" class="field text-field first-name-field" pattern="[A-Za-z]{1,15}" id="Doc" placeholder="Enter Doctor Name" style="text-transform: capitalize;" required>
+                <span class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Age
+            </td>
+            <td>
+                <input type="number" class="field text-field age-field" id="Age" placeholder="Enter Patient Age" min='0' max="99" required>
+                <span class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender
+            </td>
+            <td>
+                <div class="field text-field first-name-field" id="gender"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Disease Type
+            </td>
+            <td>
+                <div class="field text-field first-name-field" id="disease"></div >
+                
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                Ward Type
+            </td>
+            <td>
+                <div class="field text-field first-name-field" id="ward" ></div>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Room No.
+            </td>
+            <td>
+                <input class="field text-field room-field" type="text" placeholder="Enter Patient Room No." id='RoomNo' required>
+                <span class="message"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" id="submit"></td>
+        </tr>
+    </table></div>
+</form>
+    <br><br>
+    <hr>
+    <br>
+    <h4 style="color: brown;">Sorting By Category</h4>
+    <div id="SortBy"></div> &emsp;&emsp; <h4 style="color: brown;">Sorting By Category</h4> <div id="SortBy2"></div><br>
+    <table id="Table" style="border: 2px solid black;"></table>
+</center>    
+</body>
+</html>

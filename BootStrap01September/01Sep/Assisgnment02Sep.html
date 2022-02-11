@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paging</title>
+    <link rel="stylesheet" href="./../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script>
+        let Body = [
+    { EmpNo: 01, EmpName: 'Anurag', DeptName: 'IT', Salary: 600000 },
+    { EmpNo: 02, EmpName: 'Arun', DeptName: 'HR', Salary: 550000 },
+    { EmpNo: 03, EmpName: 'Dhawla', DeptName: 'IT', Salary: 380000 },
+    { EmpNo: 04, EmpName: 'Hardik', DeptName: 'PMO', Salary: 433432 },
+    { EmpNo: 05, EmpName: 'Harsh G', DeptName: 'IT', Salary: 343232 },
+    { EmpNo: 06, EmpName: 'Harsh P', DeptName: 'HR', Salary: 443343 },
+    { EmpNo: 07, EmpName: 'Mahesh', DeptName: 'Training', Salary: 443233 },
+    { EmpNo: 08, EmpName: 'Mayur', DeptName: 'IT', Salary: 121211 },
+    { EmpNo: 09, EmpName: 'Nayan', DeptName: 'AWS', Salary: 90887 },
+    { EmpNo: 10, EmpName: 'Palkesh', DeptName: 'AWS', Salary: 12232 },
+    { EmpNo: 11, EmpName: 'Siddarth', DeptName: 'IT', Salary: 22322 },
+    { EmpNo: 12, EmpName: 'Vinal', DeptName: 'PMO', Salary: 231232 },
+];
+
+let TableHead = ['EmpNo', 'EmpName', 'DeptName', 'Salary'];
+
+window.onload = function () {
+    let Body_show = 3;
+    let TotalBody = Body.length;
+    let partition = parseInt(TotalBody / Body_show);
+    if (TotalBody % Body_show !== 0)
+        partition += 1;
+    //console.log(TotalBody, partition);
+    document.getElementById("Paging").innerHTML = HTMLPage(partition);
+    FinalTable(1, Body_show, Body);
+    for (let i = 1; i <= partition; i++) {
+        document.getElementById(i).addEventListener('click', () => {
+            FinalTable(i, Body_show, Body);
+        }, false);
+
+    }
+}
+
+
+
+let HTMLPage = (p) => {
+    let pageHTML = '';
+    pageHTML += `<ul class="pagination justify-content-center">`;
+    for (let i = 1; i <= p; i++) {
+        pageHTML += `<li class="page-item"><a class="page-link" href="#" id="${i}">${i}</a></li>`;
+    }
+    pageHTML += `</ul>`;
+    return pageHTML;
+}
+
+let HTMLHead = () => {
+    let headHTML = "<tr>";
+    for (let i in TableHead) {
+        headHTML += "<th>" + TableHead[i] + "</th>";
+    }
+    headHTML += "</tr>"
+    return headHTML;
+}
+
+let HTMLBody = (i, Body_show, DataVal = Body) => {
+    let bodyHTML = "";
+    for (let ind = (i - 1) * Body_show; ind < (Body_show * i); ind++) {
+        let rowHTML = "<tr>"
+        for (let ind2 in TableHead) {
+            if (Body[ind] === undefined)
+                break;
+            else
+                rowHTML += "<td>" + DataVal[ind][TableHead[ind2]] + "</td>"
+        }
+        bodyHTML += rowHTML;
+    }
+    return bodyHTML;
+}
+
+let FinalTable=( Table1, Table2, Table3)=>{
+    document.getElementById('table').innerHTML = HTMLHead() + HTMLBody( Table1,  Table2,  Table3);
+}
+    </script>
+</head>
+<body><br>
+    <center style="padding: 10px;">
+        <div class=" Page">
+            <h1>Paging Assisnment</h1>
+            <br>
+            <table class="table table-bordered table-responsive table-striped" id="table">
+            </table>
+    
+        </div>
+        
+        <div id="Paging"></div>
+    </center>
+    
+</body>
+</html>
